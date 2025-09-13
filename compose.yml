@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+      target: app
+    volumes:
+      - .:/workspace
+    ports:
+      - 63000:3000
+    command: npm run dev
+    tty: true
+
+  storybook:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+      target: storybook
+    volumes:
+      - .:/workspace
+    ports:
+      - 63001:6006
+    command: npm run storybook
+    tty: true
