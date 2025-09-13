@@ -19,3 +19,7 @@ lint:
 .PHONY test:
 test:
 	docker compose run --rm app npm run test
+
+.PHONY generate:
+generate:
+	docker compose run --rm app npm run generate
