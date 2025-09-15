@@ -33,7 +33,7 @@ export default function Header() {
               rel='noopener noreferrer'
               className='hover:opacity-50 duration-200'
             >
-              <InstagramIcon width={28} height={28} className='fill-gray-500' />
+              <InstagramIcon width={24} height={24} className='fill-current' />
             </a>
           </li>
         </ul>

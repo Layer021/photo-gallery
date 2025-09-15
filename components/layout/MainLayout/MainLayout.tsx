@@ -8,11 +8,11 @@ export interface MainLayoutProps {
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
-      <div className='fixed top-0 left-0 w-full z-10'>
+      <div className='fixed top-0 left-0 w-full z-50'>
         <Header />
       </div>
       <main>{children}</main>
-      <div className='fixed bottom-0 left-0 w-full z-10'>
+      <div className='fixed bottom-0 left-0 w-full z-50'>
         <Footer />
       </div>
     </>
