@@ -1,3 +1,5 @@
-export default {
+const scaffdogConfig = {
   files: ['*'],
-};
+}
+
+export default scaffdogConfig

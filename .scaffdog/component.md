@@ -26,7 +26,7 @@ export default function {{ inputs.name | pascal }}(props: {{ inputs.name | pasca
 # `components/{{ inputs.directory | lower }}/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.stories.tsx`
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {{ inputs.name | pascal }} from './{{ inputs.name | pascal }}'
 
 const meta = {

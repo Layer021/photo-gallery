@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "eslint.validate": [
+    "javascript", // JavaScriptファイル
+    "javascriptreact", // .jsxファイル（React + JavaScript）
+    "typescript", // TypeScriptファイル
+    "typescriptreact" // .tsxファイル（React + TypeScript）
+  ],
+
+  // デフォルトのフォーマッターとして ESLint を設定
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 行末の余分な空白を自動的に削除（コードをきれいに保つため）
+  "files.trimTrailingWhitespace": true,
+
+  // ファイルの最後に改行を追加（POSIX規約などで推奨される）
+  "files.insertFinalNewline": true,
+  "makefile.configureOnOpen": false
+}

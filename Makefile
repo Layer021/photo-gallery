@@ -23,3 +23,7 @@ test:
 .PHONY generate:
 generate:
 	docker compose run --rm app npm run generate
+
+.PHONY format:
+format:
+	docker compose run --rm app npx prettier --write .
