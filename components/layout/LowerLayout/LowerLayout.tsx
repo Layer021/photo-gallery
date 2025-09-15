@@ -3,5 +3,5 @@ export interface LowerLayoutProps {
 }
 
 export default function LowerLayout(props: LowerLayoutProps) {
-  return <div className='pt-header pb-footer'>{props.children}</div>
+  return <div className='mt-header pt-15 pb-footer'>{props.children}</div>
 }

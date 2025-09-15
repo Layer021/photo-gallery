@@ -1,3 +1,9 @@
+import PageTitle from '@/components/shared/PageTitle'
+
 export default function ContactPage() {
-  return <div>Contact Page</div>
+  return (
+    <>
+      <PageTitle>CONTACT</PageTitle>
+    </>
+  )
 }
