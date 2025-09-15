@@ -11,20 +11,29 @@ const MENU_ITEMS = [
 
 export default function Header() {
   return (
-    <header className='flex'>
-      <h1>
-        <Link href={ROUTES.ROOT}>PHOTO GALLERY</Link>
+    <header className='flex items-center h-[70px] px-6'>
+      <h1 className='mr-auto text-2xl/none'>
+        <Link href={ROUTES.ROOT} className='hover:opacity-50 duration-200'>
+          PHOTO GALLERY
+        </Link>
       </h1>
       <nav>
-        <ul className='flex'>
+        <ul className='flex gap-5 items-center leading-none'>
           {MENU_ITEMS.map(item => (
             <li key={item.href}>
-              <Link href={item.href}>{item.label}</Link>
+              <Link href={item.href} className='hover:opacity-50 duration-200'>
+                {item.label}
+              </Link>
             </li>
           ))}
           <li>
-            <a href={EXTERNAL_LINKS.INSTAGRAM}>
-              <InstagramIcon width={24} height={24} />
+            <a
+              href={EXTERNAL_LINKS.INSTAGRAM}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:opacity-50 duration-200'
+            >
+              <InstagramIcon width={28} height={28} className='fill-gray-500' />
             </a>
           </li>
         </ul>

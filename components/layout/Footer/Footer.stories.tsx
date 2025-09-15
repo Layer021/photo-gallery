@@ -1,19 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import MainLayout from './MainLayout'
+import Footer from './Footer'
 
 const meta = {
-  component: MainLayout,
+  component: Footer,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof MainLayout>
+} satisfies Meta<typeof Footer>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {
-    children: <div className='h-[400px] flex items-center justify-center' />,
-  },
+  args: {},
 }
