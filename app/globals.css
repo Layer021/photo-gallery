@@ -3,12 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --header-height: 70px;
+  --footer-height: 30px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-cormorant-garamond: var(--font-cormorant-garamond);
+
+  --spacing-header: var(--header-height);
+  --spacing-footer: var(--footer-height);
 }
 
 body {

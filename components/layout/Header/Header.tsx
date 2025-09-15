@@ -11,7 +11,7 @@ const MENU_ITEMS = [
 
 export default function Header() {
   return (
-    <header className='flex items-center h-[70px] px-6'>
+    <header className='flex items-center h-header px-6'>
       <h1 className='mr-auto text-2xl/none'>
         <Link href={ROUTES.ROOT} className='hover:opacity-50 duration-200'>
           PHOTO GALLERY
