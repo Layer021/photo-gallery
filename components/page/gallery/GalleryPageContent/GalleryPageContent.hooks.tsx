@@ -14,7 +14,7 @@ export const useGalleryModal = () => {
 
   // クエリパラメータを削除してモーダルを閉じる
   const handleClose = () => {
-    router.replace(ROUTES.GALLERY)
+    router.replace(ROUTES.GALLERY, { scroll: false })
   }
 
   return {

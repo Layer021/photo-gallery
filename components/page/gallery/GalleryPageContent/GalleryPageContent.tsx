@@ -21,7 +21,7 @@ export default function GalleryPageContent() {
         <ul className='grid grid-cols-3 gap-6'>
           {photos.map(item => (
             <li key={item.id} className='overflow-hidden rounded-lg'>
-              <Link href={ROUTES.GALLERY_DETAIL(item.id)} replace>
+              <Link href={ROUTES.GALLERY_DETAIL(item.id)} replace scroll={false}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={item.imageUrl}
