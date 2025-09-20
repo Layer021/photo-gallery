@@ -1,9 +1,5 @@
-import PageTitle from '@/components/shared/PageTitle'
+import GalleryPageContent from '@/components/page/gallery/GalleryPageContent'
 
 export default function GalleryPage() {
-  return (
-    <>
-      <PageTitle>GALLERY</PageTitle>
-    </>
-  )
+  return <GalleryPageContent />
 }

@@ -30,7 +30,7 @@ export default function TopPageContent() {
         modules={[Autoplay, EffectFade]}
         effect='fade'
         autoplay={{ delay: 4000 }}
-        speed={3500}
+        speed={2500}
         loop
       >
         {SLIDES.map(slide => (
