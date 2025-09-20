@@ -1,6 +1,10 @@
 import type { Preview } from '@storybook/nextjs-vite'
 import '@/app/globals.css'
 import { GoogleFontDecorator } from './decorators/googleFontDecorator'
+import { initialize, mswLoader } from 'msw-storybook-addon'
+
+// Initialize MSW
+initialize()
 
 const preview: Preview = {
   decorators: [GoogleFontDecorator],
@@ -22,6 +26,7 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+  loaders: [mswLoader],
 }
 
 export default preview
