@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { cormorantGaramond } from './fonts'
 import MainLayout from '@/components/layout/MainLayout'
+import SWRProvider from './swr-provider'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang='ja'>
       <body className={`${cormorantGaramond.variable} font-cormorant-garamond antialiased`}>
-        <MainLayout>{children}</MainLayout>
+        <SWRProvider>
+          <MainLayout>{children}</MainLayout>
+        </SWRProvider>
       </body>
     </html>
   )
