@@ -1,4 +1,3 @@
-import Header, { HeaderProps } from './Header'
+import Header from './Header'
 
 export default Header
-export type { HeaderProps }
