@@ -2,19 +2,19 @@
 
 import { Autoplay, EffectFade } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { API_ENDPOINTS } from '@/utils/constants/apiEndpoints'
+import { useSuspenseFetch } from '@/hooks/useSuspenseFetch'
+import { Photo } from '@/utils/types/response'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/autoplay'
 
-const SLIDES = [
-  { id: 1, imageUrl: '/img_dev/photo1.jpg' },
-  { id: 3, imageUrl: '/img_dev/photo3.jpg' },
-  { id: 6, imageUrl: '/img_dev/photo6.jpg' },
-  { id: 2, imageUrl: '/img_dev/photo2.jpg' },
-] as const
-
 export default function TopPageContent() {
+  const { data: photos } = useSuspenseFetch<Photo[]>(
+    `${API_ENDPOINTS.PHOTOS}?only_show_on_top=true`
+  )
+
   return (
     <>
       <div
@@ -33,11 +33,11 @@ export default function TopPageContent() {
         speed={2500}
         loop
       >
-        {SLIDES.map(slide => (
-          <SwiperSlide key={slide.id}>
+        {photos.map(photo => (
+          <SwiperSlide key={photo.id}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={slide.imageUrl}
+              src={photo.imageUrl}
               alt=''
               className='h-screen w-full object-cover'
               loading='lazy'
