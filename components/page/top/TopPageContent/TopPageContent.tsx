@@ -17,11 +17,19 @@ const SLIDES = [
 export default function TopPageContent() {
   return (
     <>
-      <div className='absolute top-0 left-0 w-full h-full z-10 bg-white/10 flex items-center justify-center text-3xl font-bold text-white' />
+      <div
+        className='absolute top-0 left-0 w-full h-full z-10 bg-white/10 flex items-center justify-center text-3xl font-bold text-white'
+        style={{
+          backgroundImage:
+            'radial-gradient(gray 20%, transparent 20%), radial-gradient(gray 20%, transparent 20%)',
+          backgroundSize: '5px 5px',
+          backgroundPosition: '0 0, 2.5px 2.5px',
+        }}
+      />
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect='fade'
-        autoplay={{ delay: 8000 }}
+        autoplay={{ delay: 4000 }}
         speed={3500}
         loop
       >

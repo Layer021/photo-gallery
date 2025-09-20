@@ -7,7 +7,7 @@ export interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <>
+    <div className='overflow-y-hidden'>
       <div className='fixed top-0 left-0 w-full z-50'>
         <Header />
       </div>
@@ -15,6 +15,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <div className='fixed bottom-0 left-0 w-full z-50'>
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
