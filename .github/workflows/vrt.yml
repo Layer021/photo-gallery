@@ -19,9 +19,24 @@ jobs:
 
       # 2) Storycaptureでスクショ取得（__screenshots__ に出力）
       - name: Capture screenshots (Storycapture)
-        run: |
-          npx storycapture --serverCmd "npx http-server storybook-static -p 6006" \
-            -o __screenshots__ http://localhost:6006
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            npx storycapture --serverCmd "npx http-server storybook-static -p 6006" \
+              --serverTimeout 60000 \
+              --captureTimeout 30000 \
+              --metricsWatcher.interval 1000 \
+              --metricsWatcher.timeout 30000 \
+              --parallel 2 \
+              --viewports '{"desktop":{"width":1024,"height":768},"tablet":{"width":768,"height":1024},"mobile":{"width":375,"height":667}}' \
+              --verbose \
+              -o __screenshots__ http://localhost:6006
+        env:
+          # Puppeteer用の環境変数設定
+          PUPPETEER_LAUNCH_ARGS: '--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-gpu --no-first-run --no-zygote --single-process --disable-extensions'
 
       # 3) reg-actionsで比較＆PRにレポート
       - name: Visual diff (reg-actions)
