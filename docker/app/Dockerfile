@@ -5,13 +5,16 @@ WORKDIR /workspace
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 
+RUN apt-get update && apt-get install -y \
+    git
+
 # ===================================================
 
 FROM base as app
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"] 
+CMD ["npm", "run", "dev"]
 
 # ===================================================
 
