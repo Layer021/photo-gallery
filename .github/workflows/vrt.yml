@@ -15,7 +15,7 @@ jobs:
 
       # 1) Storybookビルド
       - name: Build Storybook
-        run: npx build-storybook -o dist-storybook
+        run: npm run build-storybook -o dist-storybook
 
       # 2) Storycapでスクショ取得（__screenshots__ に出力）
       - name: Capture screenshots (Storycap)
