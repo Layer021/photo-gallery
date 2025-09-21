@@ -15,12 +15,12 @@ jobs:
 
       # 1) Storybookビルド
       - name: Build Storybook
-        run: npm run build-storybook -o dist-storybook
+        run: npm run build-storybook
 
       # 2) Storycapでスクショ取得（__screenshots__ に出力）
       - name: Capture screenshots (Storycap)
         run: |
-          npx storycap --serverCmd "npx http-server dist-storybook -p 6006" \
+          npx storycap --serverCmd "npx http-server storybook-static -p 6006" \
             -o __screenshots__ http://localhost:6006
 
       # 3) reg-actionsで比較＆PRにレポート
