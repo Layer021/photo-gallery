@@ -1,0 +1,32 @@
+name: VRT (Storybook + reg-actions)
+on: [pull_request]
+
+jobs:
+  vrt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      # 1) Storybookビルド
+      - name: Build Storybook
+        run: npx build-storybook -o dist-storybook
+
+      # 2) Storycapでスクショ取得（__screenshots__ に出力）
+      - name: Capture screenshots (Storycap)
+        run: |
+          npx storycap --serverCmd "npx http-server dist-storybook -p 6006" \
+            -o __screenshots__ http://localhost:6006
+
+      # 3) reg-actionsで比較＆PRにレポート
+      - name: Visual diff (reg-actions)
+        uses: reg-viz/reg-actions@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          image-directory-path: __screenshots__
+          comment-report-format: summarized

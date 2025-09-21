@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-a11y',
     '@storybook/addon-vitest',
+    'storycapture',
   ],
   framework: {
     name: '@storybook/nextjs-vite',
