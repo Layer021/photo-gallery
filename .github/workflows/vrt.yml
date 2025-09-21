@@ -4,11 +4,6 @@ on: [pull_request]
 jobs:
   vrt:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: read
-      pull-requests: write
-      checks: write
     steps:
       - uses: actions/checkout@v4
 
