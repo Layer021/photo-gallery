@@ -27,3 +27,7 @@ generate:
 .PHONY format:
 format:
 	docker compose run --rm app npx prettier --write .
+
+.PHONY storycapture:
+storycapture:
+	docker compose run --rm storybook npx storycapture http://localhost:6006 --serverCmd "storybook dev -p 6006" --chromiumPath /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome
