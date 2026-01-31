@@ -13,7 +13,11 @@ export default function Header() {
   return (
     <header className='flex items-center h-header px-6'>
       <h1 className='mr-auto text-2xl/none'>
-        <Link href={ROUTES.ROOT} className='hover:opacity-50 duration-200'>
+        <Link
+          href={ROUTES.ROOT}
+          className='hover:opacity-50 duration-200'
+          data-testid='header-logo-link'
+        >
           PHOTO GALLERY
         </Link>
       </h1>
@@ -21,7 +25,11 @@ export default function Header() {
         <ul className='flex gap-5 items-center leading-none'>
           {MENU_ITEMS.map(item => (
             <li key={item.href}>
-              <Link href={item.href} className='hover:opacity-50 duration-200'>
+              <Link
+                href={item.href}
+                className='hover:opacity-50 duration-200'
+                data-testid='header-navlink'
+              >
                 {item.label}
               </Link>
             </li>
