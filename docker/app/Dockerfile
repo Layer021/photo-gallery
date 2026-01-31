@@ -9,19 +9,19 @@ ENV TZ=Asia/Tokyo
 
 FROM base as app
 
-EXPOSE 3000
-
-CMD ["npm", "run", "dev"] 
-
-# ===================================================
-
-FROM base as storybook
-
 # Storybook dependencies
 RUN apt-get update && apt-get install -y xdg-utils
 
 # Storybook test runner dependencies
 RUN npx playwright install --with-deps
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
+
+# ===================================================
+
+FROM base as storybook
 
 EXPOSE 6006
 
