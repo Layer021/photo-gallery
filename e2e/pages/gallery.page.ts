@@ -10,8 +10,7 @@ export class GalleryPage extends BasePage {
     await thumbnails.nth(index).click()
   }
 
-  async isModalVisible() {
-    const modal = this.page.locator('#gallery-modal')
-    return await modal.isVisible()
+  getModal() {
+    return this.page.locator('#gallery-modal')
   }
 }
