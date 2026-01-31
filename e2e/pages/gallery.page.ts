@@ -6,7 +6,7 @@ export class GalleryPage extends BasePage {
   }
 
   async clickThumbnailByIndex(index: number) {
-    const thumbnails = this.page.locator('a').filter({ has: this.page.locator('img') })
+    const thumbnails = this.page.locator('[data-testid="gallery-thumbnail-link"]')
     await thumbnails.nth(index).click()
   }
 
