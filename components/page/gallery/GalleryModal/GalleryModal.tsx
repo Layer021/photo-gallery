@@ -45,7 +45,7 @@ export default function GalleryModal({ isOpen, photo, onClose }: GalleryModalPro
   if (!shouldRender || !photo) return null
 
   return (
-    <div className={`fixed inset-0 flex items-center justify-center z-90 z-80`}>
+    <div id='gallery-modal' className={`fixed inset-0 flex items-center justify-center z-90 z-80`}>
       {/* Modal content */}
       <div
         className={clsx(
