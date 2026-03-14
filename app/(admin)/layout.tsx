@@ -4,7 +4,7 @@ export default function AdminGroupLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className='min-h-screen flex items-center justify-center'>
+    <div className='min-h-screen'>
       {children}
     </div>
   )
