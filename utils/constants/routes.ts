@@ -6,4 +6,6 @@ export const ROUTES = {
   CONTACT: '/contact',
   LOGIN: '/admin/login',
   ADMIN: '/admin',
+  ADMIN_PHOTOS_NEW: '/admin/photos/new',
+  ADMIN_PHOTOS_EDIT: (id: string | number) => `/admin/photos/${id}/edit`,
 } as const
