@@ -1,5 +1,1 @@
-export type ActionState = {
-  success: boolean
-  message: string
-  errors?: Record<string, string[]>
-} | null
+export type { ActionState } from '@/utils/types/actionState'
