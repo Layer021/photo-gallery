@@ -15,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={`${cormorantGaramond.variable} font-cormorant-garamond antialiased`}>
-        <SWRProvider>
-          {children}
-        </SWRProvider>
+      <body className={`${cormorantGaramond.variable} antialiased`}>
+        <SWRProvider>{children}</SWRProvider>
       </body>
     </html>
   )
