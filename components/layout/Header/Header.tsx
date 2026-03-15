@@ -4,7 +4,7 @@ import Link from 'next/link'
 import InstagramIcon from '@/public/img/Instagram.svg'
 
 const MENU_ITEMS = [
-  // { label: 'PROFILE', href: ROUTES.PROFILE },
+  { label: 'PROFILE', href: ROUTES.PROFILE },
   { label: 'GALLERY', href: ROUTES.GALLERY },
   { label: 'CONTACT', href: ROUTES.CONTACT },
 ] as const
