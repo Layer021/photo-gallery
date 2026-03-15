@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { cormorantGaramond } from './fonts'
-import MainLayout from '@/components/layout/MainLayout'
 import SWRProvider from './swr-provider'
 
 export const metadata: Metadata = {
@@ -16,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={`${cormorantGaramond.variable} font-cormorant-garamond antialiased`}>
-        <SWRProvider>
-          <MainLayout>{children}</MainLayout>
-        </SWRProvider>
+      <body className={`${cormorantGaramond.variable} antialiased`}>
+        <SWRProvider>{children}</SWRProvider>
       </body>
     </html>
   )

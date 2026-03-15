@@ -1,5 +1,5 @@
 import TopPageContent from '@/components/page/top/TopPageContent'
-import SWRProvider from './swr-provider'
+import SWRProvider from '@/app/swr-provider'
 import { serverApiClient } from '@/utils/apiClient'
 import { ApiResponse, Photo } from '@/utils/types/response'
 import { API_ENDPOINTS } from '@/utils/constants/apiEndpoints'
