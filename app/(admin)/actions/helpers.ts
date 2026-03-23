@@ -2,6 +2,9 @@ import { cookies } from 'next/headers'
 import type { ActionState } from './types'
 
 export async function getAuthHeaders() {
+  if (process.env.BYPASS_AUTH === 'true') {
+    return { Authorization: 'Bearer mock-token' }
+  }
   const cookieStore = await cookies()
   const token = cookieStore.get('auth_token')?.value
   if (!token) throw new Error('未認証')
