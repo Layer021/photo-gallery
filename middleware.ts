@@ -3,6 +3,11 @@ import type { NextRequest } from 'next/server'
 import { ROUTES } from '@/utils/constants/routes'
 
 export function middleware(request: NextRequest) {
+  // Lighthouse CI: 認証バイパス
+  if (process.env.BYPASS_AUTH === 'true') {
+    return NextResponse.next()
+  }
+
   const { pathname } = request.nextUrl
   const token = request.cookies.get('auth_token')?.value
 

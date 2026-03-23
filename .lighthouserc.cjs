@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'npm run start',
+      startServerCommand: 'BYPASS_AUTH=true npm run start',
       startServerReadyPattern: 'Ready in',
       startServerReadyTimeout: 30000,
       url: [
@@ -9,6 +9,10 @@ module.exports = {
         'http://localhost:3000/gallery',
         'http://localhost:3000/contact',
         'http://localhost:3000/profile',
+        'http://localhost:3000/admin',
+        'http://localhost:3000/admin/login',
+        'http://localhost:3000/admin/photos/new',
+        'http://localhost:3000/admin/photos/1/edit',
       ],
       numberOfRuns: 3,
       settings: {
@@ -28,4 +32,4 @@ module.exports = {
       target: 'temporary-public-storage',
     },
   },
-};
+}
